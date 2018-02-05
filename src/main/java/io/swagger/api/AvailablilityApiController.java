@@ -21,7 +21,7 @@ import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-02-02T11:14:42.902-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-02-05T00:10:30.448-08:00")
 
 @Controller
 public class AvailablilityApiController implements AvailablilityApi {
@@ -38,7 +38,7 @@ public class AvailablilityApiController implements AvailablilityApi {
         this.request = request;
     }
 
-    public ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@ApiParam(value = "") @Valid @RequestParam(value = "startTime", required = false) OffsetDateTime startTime) {
+    public ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "startTime", required = true) OffsetDateTime startTime) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {

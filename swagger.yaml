@@ -9,8 +9,6 @@ schemes:
 paths:
   /availablility:
     get:
-      consumes:
-        - application/json
       produces:
         - application/json
       parameters:
@@ -28,6 +26,7 @@ paths:
           name: "startTime"
           type: "string"
           format: "date-time"
+          required: true
           description: ""
       responses:
         '200':

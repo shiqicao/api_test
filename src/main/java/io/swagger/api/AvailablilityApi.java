@@ -22,7 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-02-02T11:14:42.902-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-02-05T00:10:30.448-08:00")
 
 @Api(value = "availablility", description = "the availablility API")
 public interface AvailablilityApi {
@@ -32,8 +32,7 @@ public interface AvailablilityApi {
         @ApiResponse(code = 200, message = "successful operation", response = AvailablilityResponse.class) })
     @RequestMapping(value = "/availablility",
         produces = { "application/json" }, 
-        consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@ApiParam(value = "") @Valid @RequestParam(value = "startTime", required = false) OffsetDateTime startTime);
+    ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "startTime", required = true) OffsetDateTime startTime);
 
 }
