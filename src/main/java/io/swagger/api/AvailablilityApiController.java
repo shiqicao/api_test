@@ -37,11 +37,12 @@ public class AvailablilityApiController implements AvailablilityApi {
         this.request = request;
     }
 
-    public ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "startTime", required = true) OffsetDateTime startTime) {
+    public ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "startTime", required = true) String startTime) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<AvailablilityResponse>(objectMapper.readValue("{  \"availability\" : \"available\"}", AvailablilityResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                AvailablilityResponse result = new AvailablilityResponse();
+                return new ResponseEntity<AvailablilityResponse>(objectMapper.readValue("{  \"availability\" : \"available\"}", AvailablilityResponse.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<AvailablilityResponse>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -6,7 +6,6 @@
 package io.swagger.api;
 
 import io.swagger.model.AvailablilityResponse;
-import org.threeten.bp.OffsetDateTime;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +31,6 @@ public interface AvailablilityApi {
     @RequestMapping(value = "/availablility",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "startTime", required = true) OffsetDateTime startTime);
+    ResponseEntity<AvailablilityResponse> availablilityGet(@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "merchantId", required = true) String merchantId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "serviceId", required = true) String serviceId,@NotNull @ApiParam(value = "", required = true) @Valid @RequestParam(value = "startTime", required = true) String startTime);
 
 }
